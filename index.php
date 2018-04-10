@@ -1,5 +1,5 @@
 <?php
 
-echo "This is a Hello world msg";
+include "engine/exam.php";
 
 ?>
