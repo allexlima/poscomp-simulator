@@ -1,8 +1,5 @@
 <?php
 
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
-
 class ReadData{
 
 	private $json;
@@ -11,7 +8,7 @@ class ReadData{
 
 	function __construct($address="../data.json"){
 		$this->setData($address);
-		$thos->setExamInit();
+		$this->setExamInit();
 	}
 
 	private function setData($jsonAddress){
@@ -36,12 +33,12 @@ class ReadData{
 			if($this->json["shuffle"])
 				shuffle($question["answers"]);
 
-			foreach ($question["answers"] as $j=>$option){
+			foreach ($question["answers"] as $j=>$option)
 				$gabarito[$i][$j] = $option["status"]?1:0;
 		}
 
 		$this->exam = $questions;
-		$this->$resultsMatrix = $gabarito;
+		$this->resultsMatrix = $gabarito;
 	}
 
 	public function getCorrectAnswer($question){
@@ -59,8 +56,21 @@ class ReadData{
 		return $this->exam;
 	}
 
+	public function getExamHeader($attr){
+		return array(
+			'name' => $this->json["name"],
+			'prof' => $this->json["prof"],
+			'details' => $this->json["details"],
+			'max-grade' => $this->json["max-grade"]
+		)[$attr];
+	}
+
 	public function getResultsMatrix(){
 		return $this->resultsMatrix;
+	}
+
+	public function getQuestionsQuantity(){
+		return count($this->exam);
 	}
 
 }
