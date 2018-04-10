@@ -3,7 +3,7 @@
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 
-class readData{
+class ReadData{
 
 	private $json;
 	private $exam;
@@ -14,12 +14,12 @@ class readData{
 		$thos->setExamInit();
 	}
 
-	private function setData($json_address){
+	private function setData($jsonAddress){
 		/*
 		** This method loads the json file and decode it
 		** this json file must have the exam's questions
 		*/
-		$file = file_get_contents($json_address);
+		$file = file_get_contents($jsonAddress);
 		$this->json = json_decode($file, True);
 	}
 
