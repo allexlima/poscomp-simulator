@@ -46,8 +46,8 @@ class readData{
 
 	public function getCorrectAnswer($question){
 		/*
-		** Find the correct question answer with 'status' == true,
-		** in json data file
+		** Find the correct question's answer with 'status' == true,
+		** in json data file and return the answer object
 		*/
 		foreach ($question["answers"] as $option){
 			if($option["status"])
