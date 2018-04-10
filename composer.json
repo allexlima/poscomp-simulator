@@ -1,7 +1,22 @@
 {
-  "require" : {
-  },
-  "require-dev": {
-    "heroku/heroku-buildpack-php": "*"
-  }
+    "name": "allexlima/poscomp-arrays-test",
+    "description": "Simple poscomp simulator using php arrays",
+    "homepage": "https://github.com/allexlima/poscomp-arrays-test",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Allex Lima",
+            "email": "allexlima@unn.edu.br",
+            "homepage": "https://allexlima.com",
+            "role": "Maintainer"
+        }
+    ],
+    "require" : {
+        "components/jquery": "3.3.1",
+        "twbs/bootstrap": "4.1.0",
+        "hsalazr/jquery-validation": "dev-master"
+    },
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    }
 }
