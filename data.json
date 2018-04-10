@@ -2,37 +2,42 @@
 	"name": "poscomp-arrays-test",
 	"prof": "None",
 	"details": "Simple poscomp simulator using php arrays",
+	"shuffle": true,
+	"max-grade": 10,
 	"exam": [
 		{
+			"id": "q1",
 			"question": "No contexto de processamento de imagens, a equalização de histograma tem por objetivo principal:",
 			"answers": [
-				{"option": "Reconhecer os objetos presentes na imagem", "result": false},
-				{"option": "Extrair as bordas presentes na imagem", "result": false},
-				{"option": "Melhorar o contraste da imagem", "result": true},
-				{"option": "Transformar a escala de cores da imagem", "result": false},
-				{"option": "Eliminar ruídos na imagem", "result": false}
+				{"label": "a", "option": "Reconhecer os objetos presentes na imagem", "result": false},
+				{"label": "b", "option": "Extrair as bordas presentes na imagem", "result": false},
+				{"label": "c", "option": "Melhorar o contraste da imagem", "result": true},
+				{"label": "d", "option": "Transformar a escala de cores da imagem", "result": false},
+				{"label": "e", "option": "Eliminar ruídos na imagem", "result": false}
 			],
 			"source": "POSCOMP2016.Q59.Tecnologia de Computação"
 		},
 		{
+			"id": "q2",
 			"question": "No contexto de processamento de imagens, um filtro do tipo passa-baixa produz o seguinte resultado:",
 			"answers": [
-				{"option": "Realça os detalhes da imagem, produzindo um efeito de sharpering (aumento da nitidez)", "result": false},
-				{"option": "Realça as propriedades geométricas da imagem a partir de máscaras pré-definidas", "result": false},
-				{"option": "Suaviza as frequências dentro de um intervalo pré-determinado de valores", "result": false},
-				{"option": "Suaviza a imagem atenuando as altas frequências, que correspondem às transições abruptas", "result": true},
-				{"option": "Realça e suaviza de forma simultânea os componentes da imagem.", "result": false}
+				{"label": "a", "option": "Realça os detalhes da imagem, produzindo um efeito de sharpering (aumento da nitidez)", "result": false},
+				{"label": "b", "option": "Realça as propriedades geométricas da imagem a partir de máscaras pré-definidas", "result": false},
+				{"label": "c", "option": "Suaviza as frequências dentro de um intervalo pré-determinado de valores", "result": false},
+				{"label": "d", "option": "Suaviza a imagem atenuando as altas frequências, que correspondem às transições abruptas", "result": true},
+				{"label": "e", "option": "Realça e suaviza de forma simultânea os componentes da imagem.", "result": false}
 			],
 			"source": "POSCOMP2016.Q61.Tecnologia de Computação"
 		},
 		{
+			"id": "q3",
 			"question": "Assinale a alternativa correta sobre o Paradigma de Programação Imperativo:",
 			"answers": [
-				{"option": "É baseado na arquitetura de Von Neumann", "result": true},
-				{"option": "Nos métodos e nos atributos, também são definidas as formas de relacionamento com objetos", "result": false},
-				{"option": "É baseada na arquitetura MVC (Model-View-Controller)", "result": false},
-				{"option": "Não existem procedimentos ou funções", "result": false},
-				{"option": "Fácil legibilidade e manutenibilidade", "result": false}
+				{"label": "a", "option": "É baseado na arquitetura de Von Neumann", "result": true},
+				{"label": "b", "option": "Nos métodos e nos atributos, também são definidas as formas de relacionamento com objetos", "result": false},
+				{"label": "c", "option": "É baseada na arquitetura MVC (Model-View-Controller)", "result": false},
+				{"label": "d", "option": "Não existem procedimentos ou funções", "result": false},
+				{"label": "e", "option": "Fácil legibilidade e manutenibilidade", "result": false}
 			],
 			"source": "POSCOMP2016.Q27.Fundamentos da Computação"
 		}
