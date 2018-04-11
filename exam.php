@@ -20,6 +20,7 @@ $rd = new ReadData("data.json");
 	<link rel="icon" href="static/icon.png">
 	<link type="text/css" rel="stylesheet" href="plugins/twbs/bootstrap/dist/css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="static/littlethings.css">
+	<link type="text/css" rel="stylesheet" href="static/funky_radio.css">
 	<script src="plugins/components/jquery/jquery.min.js"></script>
 	<script src="plugins/twbs/bootstrap/assets/js/vendor/popper.min.js"></script>
 	<script src="plugins/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -30,25 +31,42 @@ $rd = new ReadData("data.json");
 	<nav class="navbar navbar-dark bg-dark mb-5">
 		<a class="navbar-brand" href="#">
 	      <img src="static/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-	      <?php echo $rd->getExamHeader('name'); ?> - Home
+	      <?php echo $rd->getExamHeader('name'); ?>
 	    </a>
 		<ul id="aboutTop" class="nav justify-content-end">
+		  <li class="nav-item">By <b><?php echo $rd->getExamHeader('prof'); ?></b></li> |
+		  <li class="nav-item"><b><?php echo $rd->getQuestionsQuantity(); ?></b> questions</li>
+			<li class="nav-item"></li>
 			<li class="nav-item"><a class="github-button" href="https://github.com/allexlima" aria-label="Follow @allexlima on GitHub">Follow @allexlima</a></li>
 		</ul>
 	</nav>
 
 	<main role="main" class="container">
 
-		<div class="jumbotron">
-			<h1 class="display-4">Sobre</h1>
-			<p class="lead">Exame Nacional para Ingresso na Pós-Graduação em Computação (POSCOMP)</p>
-			<hr class="my-4">
-			<p>O POSCOMP é um exame aplicado em todas as regiões do País, com o objetivo específico de avaliar os conhecimentos de candidatos a Programas de Pós-Graduação em Computação oferecidos no Brasil. A grande maioria dos Programas de Pós-Graduação no País utiliza, de alguma forma, o resultado do POSCOMP em seu processo seletivo.</p>
-			<a class="btn btn-secondary btn-lg" href="http://www.sbc.org.br/educacao/poscomp" role="button">Mais informações</a>
-			<a class="btn btn-primary btn-lg" href="exam.php" role="button">Iniciar simulado &raquo;</a>
-		</div>
+		<form>
+			<?php
 
+				$exam = $rd->getExam();
+				foreach($exam as $question){
+					echo "<h4> ".$question["text"]."</h4>\n<div class='funkyradio'>\n";
+					foreach($question["answers"] as $option){
+						echo "<div class='funkyradio-primary'>";
+						echo "<input type='radio' name='q".$question['id']."' value='".$option['id']."' id='q".$question['id'].$option['id']."' />";
+						echo "<label for='q".$question['id'].$option['id']."'>".$option['text']."</label>";
+						echo "</div>";
+					}
+					echo "</div><div class='float-right' style='font-size: 0.8em'>";
+					echo "<a href='#' class='badge badge-secondary'>".explode(".", $question["source"])[0]."</a> ";
+					echo "<a href='#' class='badge badge-light'>".explode(".", $question["source"])[2]."</a> ";
+					echo "</div></div>";
+				}
+			?>
+			<br><br><br>
+			<button type="button" class="btn btn-outline-primary btn-lg btn-block">Finalizar simulado</button>
+		</form>
 	</main>
+
+	<br><br>
 
 	<footer class="footer">
 		<div class="container">

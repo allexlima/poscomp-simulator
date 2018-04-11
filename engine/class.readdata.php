@@ -28,16 +28,20 @@ class ReadData{
 		*/
 		$questions = $this->json["questions"];
 		$gabarito = array();
+		$n_questions = array();
 
 		foreach ($questions as $i=>$question) {
+
 			if($this->json["shuffle"])
 				shuffle($question["answers"]);
 
 			foreach ($question["answers"] as $j=>$option)
 				$gabarito[$i][$j] = $option["status"]?1:0;
+
+			$n_questions[] = $question;
 		}
 
-		$this->exam = $questions;
+		$this->exam = $n_questions;
 		$this->resultsMatrix = $gabarito;
 	}
 
