@@ -1,6 +1,6 @@
 {
-	"name": "poscomp-arrays-test",
-	"prof": "None",
+	"name": "POSCOMP Simulator",
+	"prof": "Allex",
 	"details": "Simple poscomp simulator using php arrays",
 	"shuffle": true,
 	"max-grade": 10,
