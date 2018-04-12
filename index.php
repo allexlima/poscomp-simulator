@@ -8,6 +8,7 @@ $dtm = new DataManager("src/data.json");
 
 switch (@$_GET['pg']) {
 	case 'exam': include 'src/pgs/exam.php'; break;
+	case 'results': include 'src/pgs/results.php'; break;
 	default: include 'src/pgs/home.php'; break;
 }
 

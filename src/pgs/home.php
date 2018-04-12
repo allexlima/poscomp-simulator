@@ -19,7 +19,7 @@
 <body>
 
 	<nav class="navbar navbar-dark bg-dark mb-5">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="https://github.com/allexlima/poscomp-simulator">
 	      <img src="src/static/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
 	      <?php echo $dtm->getExamHeader('name'); ?> - Home
 	    </a>

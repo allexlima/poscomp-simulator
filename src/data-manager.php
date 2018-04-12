@@ -5,6 +5,7 @@ class DataManager{
 	private $json;
 	private $exam;
 	private $resultsMatrix;
+	private $questionPoints;
 
 	function __construct($address="../data.json"){
 		$this->setData($address);
@@ -45,6 +46,16 @@ class DataManager{
 		$this->resultsMatrix = $gabarito;
 	}
 
+	public function getQuestionById($id){
+		/*
+		** Finds a question by Id
+		*/
+		foreach ($this->exam as $question) {
+			if ($question["id"] == $id)
+				return $question;
+		}
+	}
+
 	public function getCorrectAnswer($question){
 		/*
 		** Find the correct question's answer with 'status' == true,
@@ -75,6 +86,11 @@ class DataManager{
 
 	public function getQuestionsQuantity(){
 		return count($this->exam);
+	}
+
+	public function getQuestionPoints($precision=2){
+		$maxGrade = $this->getExamHeader("max-grade");
+		return round($maxGrade/$this->getQuestionsQuantity(), $precision);
 	}
 
 }

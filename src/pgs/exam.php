@@ -19,7 +19,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark mb-5">
-		<a class="navbar-brand animated pulse" href="#">
+		<a class="navbar-brand animated pulse" href="https://github.com/allexlima/poscomp-simulator">
 			<img src="src/static/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
 			<?php echo $dtm->getExamHeader('name'); ?>
 	    </a>
@@ -31,15 +31,15 @@
 	</nav>
 
 	<main class="container">
-		<form>
+		<form method="post" name="exam-poscomp" action="?pg=results">
 			<?php
 				$exam = $dtm->getExam();
 				foreach($exam as $i=>$question){
 					$effect = ($i%2 == 0)?"animated bounceInLeft":"animated bounceInRight";
 					echo "<div class='form-group $effect'><h4> ".$question["text"]."</h4><div class='funkyradio'>";
 					foreach($question["answers"] as $option){
-						echo "<div class='funkyradio-primary'><input type='radio' name='q".$question['id']."' value='".$option['id']."' id='q".$question['id'].$option['id']."' />";
-						echo "<label for='q".$question['id'].$option['id']."'>".$option['text']."</label></div>";
+						echo "<div class='funkyradio-primary'><input type='radio' name='".$question['id']."' value='".$option['id']."' id='".$question['id'].$option['id']."' />";
+						echo "<label for='".$question['id'].$option['id']."'>".$option['text']."</label></div>";
 					}
 					echo "</div><div class='float-right' style='font-size: 0.8em'><a href='#' class='badge badge-secondary'>".explode(".", $question["source"])[0]."</a> ";
 					echo "<a href='#' class='badge badge-light'>".explode(".", $question["source"])[2]."</a></div></div>";
@@ -47,7 +47,7 @@
 				}
 			?>
 			<br><br><br>
-			<button type="button" class="btn btn-outline-primary btn-lg btn-block">Finalizar simulado</button>
+			<button type="submit" class="btn btn-outline-primary btn-lg btn-block">Finalizar simulado</button>
 		</form>
 	</main>
 
