@@ -10,6 +10,7 @@
 	<link rel="icon" href="src/static/icon.png">
 	<link type="text/css" rel="stylesheet" href="plugins/twbs/bootstrap/dist/css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="src/static/littlethings.css">
+	<link type="text/css" rel="stylesheet" href="src/static/animate.css">
 	<link type="text/css" rel="stylesheet" href="src/static/funky_radio.css">
 	<script src="plugins/components/jquery/jquery.min.js"></script>
 	<script src="plugins/twbs/bootstrap/assets/js/vendor/popper.min.js"></script>
@@ -18,7 +19,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark mb-5">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand animated pulse" href="#">
 			<img src="src/static/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
 			<?php echo $dtm->getExamHeader('name'); ?>
 	    </a>
@@ -33,14 +34,16 @@
 		<form>
 			<?php
 				$exam = $dtm->getExam();
-				foreach($exam as $question){
-					echo "<div class='form-group'><h4> ".$question["text"]."</h4><div class='funkyradio'>";
+				foreach($exam as $i=>$question){
+					$effect = ($i%2 == 0)?"animated bounceInLeft":"animated bounceInRight";
+					echo "<div class='form-group $effect'><h4> ".$question["text"]."</h4><div class='funkyradio'>";
 					foreach($question["answers"] as $option){
 						echo "<div class='funkyradio-primary'><input type='radio' name='q".$question['id']."' value='".$option['id']."' id='q".$question['id'].$option['id']."' />";
 						echo "<label for='q".$question['id'].$option['id']."'>".$option['text']."</label></div>";
 					}
 					echo "</div><div class='float-right' style='font-size: 0.8em'><a href='#' class='badge badge-secondary'>".explode(".", $question["source"])[0]."</a> ";
 					echo "<a href='#' class='badge badge-light'>".explode(".", $question["source"])[2]."</a></div></div>";
+
 				}
 			?>
 			<br><br><br>

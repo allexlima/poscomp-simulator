@@ -10,6 +10,7 @@
 	<link rel="icon" href="src/static/icon.png">
 	<link type="text/css" rel="stylesheet" href="plugins/twbs/bootstrap/dist/css/bootstrap.min.css">
 	<link type="text/css" rel="stylesheet" href="src/static/littlethings.css">
+	<link type="text/css" rel="stylesheet" href="src/static/animate.css">
 	<script src="plugins/components/jquery/jquery.min.js"></script>
 	<script src="plugins/twbs/bootstrap/assets/js/vendor/popper.min.js"></script>
 	<script src="plugins/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -27,7 +28,7 @@
 		</ul>
 	</nav>
 
-	<main class="container">
+	<main class="container animated fadeInUp">
 
 		<div class="jumbotron">
 			<h1 class="display-4">Sobre</h1>
@@ -35,7 +36,7 @@
 			<hr class="my-4">
 			<p>O POSCOMP é um exame aplicado em todas as regiões do País, com o objetivo específico de avaliar os conhecimentos de candidatos a Programas de Pós-Graduação em Computação oferecidos no Brasil. A grande maioria dos Programas de Pós-Graduação no País utiliza, de alguma forma, o resultado do POSCOMP em seu processo seletivo.</p>
 			<a class="btn btn-secondary btn-lg" href="http://www.sbc.org.br/educacao/poscomp" role="button">Mais informações</a>
-			<a class="btn btn-primary btn-lg" href="?pg=exam" role="button">Iniciar simulado &raquo;</a>
+			<a class="btn btn-primary btn-lg animated jello" href="?pg=exam" role="button">Iniciar simulado &raquo;</a>
 		</div>
 
 	</main>
