@@ -16,6 +16,8 @@
 	<script src="plugins/twbs/bootstrap/assets/js/vendor/popper.min.js"></script>
 	<script src="plugins/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<script src="src/static/jquery.validate.js"></script>
+	<script src="src/static/validacao.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark mb-5">
@@ -31,7 +33,7 @@
 	</nav>
 
 	<main class="container">
-		<form method="post" name="exam-poscomp" action="?pg=results">
+		<form method="post" id="examPoscomp" action="?pg=results">
 			<?php
 				$exam = $dtm->getExam();
 				foreach($exam as $i=>$question){

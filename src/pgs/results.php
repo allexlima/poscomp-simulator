@@ -1,3 +1,7 @@
+<?php
+	if(!$_POST)
+		header('Location: ?pg=home');
+?>
 <!DOCTYPE html>
 
 <html lang="pt">
@@ -62,31 +66,27 @@
 				<div id="detailed-grade-body" style="display:none; text-align:left;padding:10px;">
 					<?php
 						$nota = 0;
-						if($_POST){
-							$exam = $dtm->getExam();
-							foreach($exam as $i=>$question){
-								$correct = $dtm->getCorrectAnswer($question);
-								echo "<div class='form-group'><h5> ".$question["text"]."</h5>";
-								foreach($question["answers"] as $option){
-									$selected = (@$_POST[(string) $question["id"]] == $option['id']);
-									$selected_frame = $selected?"alert-info":"blank";
+						$exam = $dtm->getExam();
+						foreach($exam as $i=>$question){
+							$correct = $dtm->getCorrectAnswer($question);
+							echo "<div class='form-group'><h5> ".$question["text"]."</h5>";
+							foreach($question["answers"] as $option){
+								$selected = (@$_POST[(string) $question["id"]] == $option['id']);
+								$selected_frame = $selected?"alert-info":"blank";
 
-									echo "<div style='cursor:default' class='alert ".$selected_frame."' title='".($selected?"Você marcou esta!":"Alternativa não selecionada")."'>";
+								echo "<div style='cursor:default' class='alert ".$selected_frame."' title='".($selected?"Você marcou esta!":"Alternativa não selecionada")."'>";
 
-									if($option['id'] == $correct['id']){
-										echo "<span class='badge badge-primary' title='Alternativa correta'>✔</span> ";
-										if($selected)
-											$nota += $dtm->getQuestionPoints();
-									}else if($selected)
-										echo "<span class='badge badge-danger' title='Alternativa incorreta'>✘</span> ";
+								if($option['id'] == $correct['id']){
+									echo "<span class='badge badge-primary' title='Alternativa correta'>✔</span> ";
+									if($selected)
+										$nota += $dtm->getQuestionPoints();
+								}else if($selected)
+									echo "<span class='badge badge-danger' title='Alternativa incorreta'>✘</span> ";
 
-									echo $option['text'];
-									echo "</div>";
-								}
+								echo $option['text'];
 								echo "</div>";
 							}
-						}else{
-							echo "<div style='text-align:center;'><div class='alert alert-danger' role='alert'>Você necessita finalizar o simulado primeiro!</div><br><a href='?pg=exam' class='btn btn-primary'>Fazer simulado</a></div>";
+							echo "</div>";
 						}
 					?>
 				</div>
