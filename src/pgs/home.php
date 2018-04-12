@@ -27,7 +27,7 @@
 		</ul>
 	</nav>
 
-	<main role="main" class="container">
+	<main class="container">
 
 		<div class="jumbotron">
 			<h1 class="display-4">Sobre</h1>
