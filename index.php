@@ -3,58 +3,12 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once('engine/class.readdata.php');
+require_once 'src/data-manager.php';
+$dtm = new DataManager("src/data.json");
 
-$rd = new ReadData("data.json");
+switch (@$_GET['pg']) {
+	case 'exam': include 'src/pgs/exam.php'; break;
+	default: include 'src/pgs/home.php'; break;
+}
 
 ?>
-<!DOCTYPE html>
-
-<html lang="pt">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Allex Lima">
-	<meta name="description" content="<?php echo $rd->getExamHeader('details'); ?>">
-	<title><?php echo $rd->getExamHeader('name'); ?></title>
-	<link rel="icon" href="static/icon.png">
-	<link type="text/css" rel="stylesheet" href="plugins/twbs/bootstrap/dist/css/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" href="static/littlethings.css">
-	<script src="plugins/components/jquery/jquery.min.js"></script>
-	<script src="plugins/twbs/bootstrap/assets/js/vendor/popper.min.js"></script>
-	<script src="plugins/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script async defer src="https://buttons.github.io/buttons.js"></script>
-</head>
-<body>
-
-	<nav class="navbar navbar-dark bg-dark mb-5">
-		<a class="navbar-brand" href="#">
-	      <img src="static/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-	      <?php echo $rd->getExamHeader('name'); ?> - Home
-	    </a>
-		<ul id="aboutTop" class="nav justify-content-end">
-			<li class="nav-item"><a class="github-button" href="https://github.com/allexlima" aria-label="Follow @allexlima on GitHub">Follow @allexlima</a></li>
-		</ul>
-	</nav>
-
-	<main role="main" class="container">
-
-		<div class="jumbotron">
-			<h1 class="display-4">Sobre</h1>
-			<p class="lead">Exame Nacional para Ingresso na Pós-Graduação em Computação (POSCOMP)</p>
-			<hr class="my-4">
-			<p>O POSCOMP é um exame aplicado em todas as regiões do País, com o objetivo específico de avaliar os conhecimentos de candidatos a Programas de Pós-Graduação em Computação oferecidos no Brasil. A grande maioria dos Programas de Pós-Graduação no País utiliza, de alguma forma, o resultado do POSCOMP em seu processo seletivo.</p>
-			<a class="btn btn-secondary btn-lg" href="http://www.sbc.org.br/educacao/poscomp" role="button">Mais informações</a>
-			<a class="btn btn-primary btn-lg" href="exam.php" role="button">Iniciar simulado &raquo;</a>
-		</div>
-
-	</main>
-
-	<footer class="footer">
-		<div class="container">
-			<span class="text-muted">&copy; 2018 <a href="http://allexlima.com">Allex Lima</a> &middot; All rights reserved under <a href="LICENSE">MIT license</a>.</span>
-		</div>
-	</footer>
-
-</body>
-</html>

@@ -1,6 +1,6 @@
 <?php
 
-class ReadData{
+class DataManager{
 
 	private $json;
 	private $exam;

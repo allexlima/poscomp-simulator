@@ -1,13 +1,3 @@
-<?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-require_once('engine/class.readdata.php');
-
-$rd = new ReadData("data.json");
-
-?>
 <!DOCTYPE html>
 
 <html lang="pt">
@@ -15,12 +5,12 @@ $rd = new ReadData("data.json");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Allex Lima">
-	<meta name="description" content="<?php echo $rd->getExamHeader('details'); ?>">
-	<title><?php echo $rd->getExamHeader('name'); ?></title>
-	<link rel="icon" href="static/icon.png">
+	<meta name="description" content="<?php echo $dtm->getExamHeader('details'); ?>">
+	<title><?php echo $dtm->getExamHeader('name'); ?></title>
+	<link rel="icon" href="src/static/icon.png">
 	<link type="text/css" rel="stylesheet" href="plugins/twbs/bootstrap/dist/css/bootstrap.min.css">
-	<link type="text/css" rel="stylesheet" href="static/littlethings.css">
-	<link type="text/css" rel="stylesheet" href="static/funky_radio.css">
+	<link type="text/css" rel="stylesheet" href="src/static/littlethings.css">
+	<link type="text/css" rel="stylesheet" href="src/static/funky_radio.css">
 	<script src="plugins/components/jquery/jquery.min.js"></script>
 	<script src="plugins/twbs/bootstrap/assets/js/vendor/popper.min.js"></script>
 	<script src="plugins/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -30,12 +20,12 @@ $rd = new ReadData("data.json");
 
 	<nav class="navbar navbar-dark bg-dark mb-5">
 		<a class="navbar-brand" href="#">
-	      <img src="static/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-	      <?php echo $rd->getExamHeader('name'); ?>
+	      <img src="src/static/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+	      <?php echo $dtm->getExamHeader('name'); ?>
 	    </a>
 		<ul id="aboutTop" class="nav justify-content-end">
-		  <li class="nav-item">By <b><?php echo $rd->getExamHeader('prof'); ?></b></li> |
-		  <li class="nav-item"><b><?php echo $rd->getQuestionsQuantity(); ?></b> questions</li>
+		  <li class="nav-item">By <b><?php echo $dtm->getExamHeader('prof'); ?></b></li> |
+		  <li class="nav-item"><b><?php echo $dtm->getQuestionsQuantity(); ?></b> questions</li>
 			<li class="nav-item"></li>
 			<li class="nav-item"><a class="github-button" href="https://github.com/allexlima" aria-label="Follow @allexlima on GitHub">Follow @allexlima</a></li>
 		</ul>
@@ -44,9 +34,9 @@ $rd = new ReadData("data.json");
 	<main role="main" class="container">
 
 		<form>
-			<?php
 
-				$exam = $rd->getExam();
+			<?php
+				$exam = $dtm->getExam();
 				foreach($exam as $question){
 					echo "<h4> ".$question["text"]."</h4>\n<div class='funkyradio'>\n";
 					foreach($question["answers"] as $option){
@@ -61,6 +51,7 @@ $rd = new ReadData("data.json");
 					echo "</div></div>";
 				}
 			?>
+
 			<br><br><br>
 			<button type="button" class="btn btn-outline-primary btn-lg btn-block">Finalizar simulado</button>
 		</form>
