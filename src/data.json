@@ -40,6 +40,90 @@
 				{"id": "e", "text": "Fácil legibilidade e manutenibilidade", "status": false}
 			],
 			"source": "POSCOMP2016.Q27.Fundamentos da Computação"
+		},
+		{
+			"id": 4,
+			"text": "O conceito de encapsulamento de programação orientada a objetos pode ser implementado na linguagem Java por meio de:",
+			"answers": [
+				{"id": "a", "text": "Métodos estáticos (static) e públicos (public).", "status": false},
+				{"id": "b", "text": "Nos métodos e nos atributos, também são definidas as formas de relacionamento com objetos", "status": false},
+				{"id": "c", "text": "É baseada na arquitetura MVC (Model-View-Controller)", "status": false},
+				{"id": "d", "text": "Não existem procedimentos ou funções", "status": false},
+				{"id": "e", "text": "Fácil legibilidade e manutenibilidade", "status": false}
+			],
+			"source": "POSCOMP2015.Q23.Fundamentos da Computação"
+		},	
+		{
+			"id": 5,
+			"text": "Centenas de problemas computacionais são expressos em termos de grafos, e os algoritmos para resolvê-los são fundamentais para a computação. O algoritmo de busca em...",
+			"answers": [
+				{"id": "a", "text": "Largura utiliza pilha, enquanto o de busca em profundidade utiliza fila", "status": false},
+				{"id": "b", "text": "Largura é o responsável pela definição do vértice inicial", "status": false},
+				{"id": "c", "text": "Profundidade é utilizado para obter uma ordenação topológica em um dígrafo acíclico", "status": true},
+				{"id": "d", "text": "Largura explora as arestas a partir do vértice mais recentemente visitado", "status": false},
+				{"id": "e", "text": "Profundidade expande a fronteira entre vértices conhecidos e desconhecidos uniformemente", "status": false}
+			],
+			"source": "POSCOMP2015.Q37.Fundamentos da Computação"
+		},
+		{
+			"id": 6,
+			"text": "Computador com um Conjunto Reduzido de Instruções (RISC) é uma linha de arquitetura de processadores que favorece um conjunto simples e pequeno de instruções que levam aproximadamente a mesma quantidade de tempo para ser executadas. São consideradas características típicas da organização RISC:",
+			"answers": [
+				{"id": "a", "text": "Oferecer suporte para linguagens de alto nível e facilitar o desenvolvimento de compiladores", "status": false},
+				{"id": "b", "text": "Prover o computador com um conjunto complexo de instruções e melhorar a execução de programas", "status": false},
+				{"id": "c", "text": "Manter poucos registradores e ter registradores especializados", "status": false},
+				{"id": "d", "text": "Otimizar o pipeline de instrução e apresentar um conjunto limitado de instruções com formato fixo", "status": true},
+				{"id": "e", "text": "Dispor grande conjunto de instruções e apresentar vários modos de endereçamento", "status": false}
+			],
+			"source": "POSCOMP2015.Q37.Fundamentos da Computação"
+		},
+		{
+			"id": 7,
+			"text": "Em um texto fonte de linguagem de programação, o compilador realiza a identificação da função gramatical das palavras, a verificação da estrutura gramatical dos comandos e dos seus significados. Os componentes arquiteturais de um compilador que realizam essas atividades são, respectivamente,",
+			"answers": [
+				{"id": "a", "text": "Analisador léxico, analisador semântico, otimizador de código intermediário", "status": false},
+				{"id": "b", "text": "Analisador léxico, analisador sintático, analisador semântico", "status": true},
+				{"id": "c", "text": "Analisador sintático, gerador de código, analisador semântico", "status": false},
+				{"id": "d", "text": "Analisador semântico, gerador de código intermediário, otimizador de código intermediário", "status": false},
+				{"id": "e", "text": "Analisador sintático, analisador semântico, gerador de código", "status": false}
+			],
+			"source": "POSCOMP2015.Q63.Tecnologia da Computação"
+		},
+		{
+			"id": 8,
+			"text": "Assinale a alternativa que apresenta, corretamente, o algoritmo utilizado para determinar o caminho mínimo entre todos os pares de vértices de um grafo",
+			"answers": [
+				{"id": "a", "text": "Bellman-Ford", "status": false},
+				{"id": "b", "text": "Floyd-Warshall", "status": true},
+				{"id": "c", "text": "Dijkstra", "status": false},
+				{"id": "d", "text": "Kruskal", "status": false},
+				{"id": "e", "text": "Prim", "status": false}
+			],
+			"source": "POSCOMP2014.Q37.Fundamentos da computação"
+		},
+		{
+			"id": 9,
+			"text": "O modelo de referência Open Systems Interconnection (OSI) é dividido em sete camadas. Cada uma dessas camadas tem suas respectivas tarefas. Uma das tarefas previstas no modelo OSI é a de transformar um canal de transmissão físico em uma linha que pareça livre de erros de transmissão.Assinale a alternativa que apresenta, corretamente, a camada responsável por essa tarefa",
+			"answers": [
+				{"id": "a", "text": "Camada de aplicação", "status": false},
+				{"id": "b", "text": "Camada de apresentação", "status": false},
+				{"id": "c", "text": "Camada de rede", "status": false},
+				{"id": "d", "text": "Camada de sessão", "status": false},
+				{"id": "e", "text": "Camada de enlace de dados", "status": true}
+			],
+			"source": "POSCOMP2014.Q60.Tecnologia da computação"
+		},
+		{
+			"id": 10,
+			"text": "Sobre pipelines, assinale a alternativa correta",
+			"answers": [
+				{"id": "a", "text": "Cada estágio do pipeline possui seu próprio tempo de duração", "status": false},
+				{"id": "b", "text": "Um pipeline precisa de registradores para armazenar dados entre estágios", "status": true},
+				{"id": "c", "text": "Dependências de dados irão paralisar o pipeline", "status": false},
+				{"id": "d", "text": "O pipeline é paralisado ao executar uma instrução de desvio", "status": false},
+				{"id": "e", "text": "O tempo de leitura de uma instrução é maior que o tempo de execução", "status": false}
+			],
+			"source": "POSCOMP2014.Q49.Fundamentos da computação"
 		}
 	]
 }
