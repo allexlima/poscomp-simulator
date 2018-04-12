@@ -2,15 +2,15 @@
 
 ## Welcome to Poscomp-Simulator
 
-[![Heroku](https://heroku-badge.herokuapp.com/?app=poscomp-simulator)]
-[![License](https://img.shields.io/badge/license-MIT-green.svg)]
+[![Heroku](https://heroku-badge.herokuapp.com/?app=poscomp-simulator)]()
+[![License](https://img.shields.io/badge/license-MIT-green.svg)]()
 
 Poscomp-Simulator is a simple webapp that allows you test your knowledge to [POSCOMP exam](http://www.sbc.org.br/educacao/poscomp).
 
 :star2: Don't forget to give a star to this repo =)
 
 
-#### Setup
+### Setup
 
 1. Install [composer](https://getcomposer.org/download/) in your OS
 
@@ -29,12 +29,15 @@ Poscomp-Simulator is a simple webapp that allows you test your knowledge to [POS
 
 4. Access the webapp [http://localhost/poscomp-simulator](http://localhost/poscomp-simulator) and enjoy it
 
+#### Deploy Poscomp-Simulator to Heroku without leaving the web browser!!
 
-##### Editing basic app infos without access any php code
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/allexlima/poscomp-simulator)
 
-You can update some webapp attributes like **app name**, **supervisor/professor name**, **app details**, **exam max grade**, and if the app should **shuffle alternatives**. To do this updates you can edit the 6 first lines on `src/data.json` file! It ins't necessary change any PHP code =)
+#### Editing basic app info without access any php code
 
-##### How to add, edit, or remove questions and answers?
+You can update some webapp attributes like **app name**, **supervisor/professor name**, **app details**, **exam max grade**, and if the app should **shuffle alternatives**. To do this updates you can edit the 6 first lines of `src/data.json` file! It isn't necessary change any PHP code =)
+
+#### How to add, edit, or remove questions and answers?
 
 1. Open `src/data.json` file, then in the `questions` array attribute, you'll be able to add, editing, or removing questions/answers. It's important to follow the template above:
 
@@ -46,7 +49,8 @@ You can update some webapp attributes like **app name**, **supervisor/professor 
 			{"id": "a", "text": stringValue, "status": boolValue},
 			{"id": "b", "text": stringValue, "status": boolValue},
 			{"id": "c", "text": stringValue, "status": boolValue},
-			{"id": "d", "text": stringValue, "status": boolValue},
+			{"id": "d", "text": stringValu
+You can update some webapp attributes like app name, supervisor/professor name, app details, exam max grade, and if the app should shuffle alternatives. To do this updates you can edit the 6 first lines on src/data.json file! It isn't necessary change any PHP code =)e, "status": boolValue},
 			{"id": "e", "text": stringValue, "status": boolValue}
 		],
 		"source": stringValue
@@ -58,4 +62,4 @@ Obs: Each question MUST have exactly 5 alternatives!
 ---
 
 Developed by [Allex Lima](http://allexlima.com)
-###### Copyright © 2018 [CG-Penrose](https://github.com/allexlima/poscomp-simulator) - Licensed by MIT LICENSE.
+###### Copyright © 2018 [Poscomp-Simulator](https://github.com/allexlima/poscomp-simulator) - Licensed by MIT LICENSE.
