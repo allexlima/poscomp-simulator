@@ -2,8 +2,8 @@
 
 ## Welcome to Poscomp-Simulator
 
-[![Heroku](https://heroku-badge.herokuapp.com/?app=poscomp-simulator)]()
-[![License](https://img.shields.io/badge/license-MIT-green.svg)]()
+[![Heroku](https://heroku-badge.herokuapp.com/?app=poscomp-simulator)](https://poscomp-simulator.herokuapp.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/allexlima/poscomp-simulator/blob/master/LICENSE)
 
 Poscomp-Simulator is a simple webapp that allows you test your knowledge to [POSCOMP exam](http://www.sbc.org.br/educacao/poscomp).
 
@@ -49,8 +49,7 @@ You can update some webapp attributes like **app name**, **supervisor/professor 
 			{"id": "a", "text": stringValue, "status": boolValue},
 			{"id": "b", "text": stringValue, "status": boolValue},
 			{"id": "c", "text": stringValue, "status": boolValue},
-			{"id": "d", "text": stringValu
-You can update some webapp attributes like app name, supervisor/professor name, app details, exam max grade, and if the app should shuffle alternatives. To do this updates you can edit the 6 first lines on src/data.json file! It isn't necessary change any PHP code =)e, "status": boolValue},
+			{"id": "d", "text": stringValue, "status": boolValue},
 			{"id": "e", "text": stringValue, "status": boolValue}
 		],
 		"source": stringValue
