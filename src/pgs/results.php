@@ -27,7 +27,7 @@
 		color: #707071;
 		border-color: #d6d3d3;
 		}
-	</style
+	</style>
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
