@@ -14,7 +14,7 @@
 	<link type="text/css" rel="stylesheet" href="src/static/funky_radio.css">
 	<script src="plugins/components/jquery/jquery.min.js"></script>
 	<script src="plugins/twbs/bootstrap/assets/js/vendor/popper.min.js"></script>
-	<script src="plugins/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="plugins/twbs/bootstrap/dist/js/bootstrap.min.js"></script> 
 	<script async defer src="https://buttons.github.io/buttons.js"></script>
 	<script src="src/static/jquery.validate.js"></script>
 	<script src="src/static/validacao.js"></script>
@@ -33,23 +33,24 @@
 	</nav>
 
 	<main class="container">
-		<form method="post" id="examPoscomp" action="?pg=results">
+		<form method="post" id="examForm" action="?pg=results">			
 			<?php
-				$exam = $dtm->getExam();
-				foreach($exam as $i=>$question){
-					$effect = ($i%2 == 0)?"animated bounceInLeft":"animated bounceInRight";
-					echo "<div class='form-group $effect'><h4> ".$question["text"]."</h4><div class='funkyradio'>";
-					foreach($question["answers"] as $option){
-						echo "<div class='funkyradio-primary'><input type='radio' name='".$question['id']."' value='".$option['id']."' id='".$question['id'].$option['id']."' />";
-						echo "<label for='".$question['id'].$option['id']."'>".$option['text']."</label></div>";
-					}
-					echo "</div><div class='float-right' style='font-size: 0.8em'><a href='#' class='badge badge-secondary'>".explode(".", $question["source"])[0]."</a> ";
-					echo "<a href='#' class='badge badge-light'>".explode(".", $question["source"])[2]."</a></div></div>";
-
-				}
+ 				$exam = $dtm->getExam();
+ 				foreach($exam as $i=>$question){
+ 					$effect = ($i%2 == 0)?"animated bounceInLeft":"animated bounceInRight";
+ 					echo "<div class='form-group $effect'><h4>".$question["text"]."</h4><div>";
+ 					foreach($question["answers"] as $option){
+ 						echo "<div class='input-group'><div class='input-group-prepend' style='margin:2px;'>";
+ 						echo "<div class='input-group-text'><input type='radio' name='".$question['id']."' value='".$option['id']."' id='".$question['id'].$option['id']."' required/></div>";
+ 						echo "<label style='margin:5px;' for='".$question['id'].$option['id']."'>".$option['text']."</label></div></div>";
+ 					}
+ 					echo "<div class='float-right' style='font-size: 0.8em'><a href='#' class='badge badge-secondary'>".explode(".", $question["source"])[0]."</a> ";
+ 					echo "<a href='#' class='badge badge-light'>".explode(".", $question["source"])[2]."</a></div>";					
+ 					echo "</div></div>";
+ 				}
 			?>
 			<br><br><br>
-			<button type="submit" class="btn btn-outline-primary btn-lg btn-block">Finalizar simulado</button>
+			<input type="submit" class="btn btn-outline-primary btn-lg btn-block" value="Finalizar simulado"/>
 		</form>
 	</main>
 

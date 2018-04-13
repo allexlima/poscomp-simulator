@@ -1,7 +1,3 @@
-<?php
-	if(!$_POST)
-		header('Location: ?pg=home');
-?>
 <!DOCTYPE html>
 
 <html lang="pt">
@@ -54,6 +50,12 @@
 	</div>
 
 	<main class="container">
+		
+		<?php
+			if(!$_POST)
+				echo "Erro: POST NÃO RECEBIDO!";
+		?>
+				
 		<div class="card text-center">
 			<div class="card-header">
 				<ul class="nav nav-tabs card-header-tabs">

@@ -13,7 +13,6 @@ $(document).ready(function () {
 			$("#detailed-grade").addClass('active');
 			$("#general-grade-body").hide();
 			$("#detailed-grade-body").show();
-			$("#detailed-grade-body").addClass('animated bounceIn');
 			detailed_tab = true;
 			general_tab = false;
 		}
